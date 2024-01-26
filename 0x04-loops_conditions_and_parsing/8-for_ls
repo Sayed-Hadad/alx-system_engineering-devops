@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Display the content of the current directory in a list format, showing only the part of the name after the first dash
+
+
+for item in *; do
+    if [[ $item != .* ]]; then
+        
+        after_dash=$(echo "$item" | cut -d'-' -f2-)
+        echo "$after_dash"
+    fi
+done
