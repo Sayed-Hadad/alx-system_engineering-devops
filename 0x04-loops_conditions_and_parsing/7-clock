@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is displaying clock Hours:Min from 0:1 to 12:59
 
 hour=0
 while [ "$hour" -le 12 ]; do
