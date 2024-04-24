@@ -18,4 +18,3 @@ if __name__ == '__main__':
         for line in todo_lis:
             writer.writerow([argv[1], user.get('username'),
                             line.get('completed'), line.get('title')])
-        
