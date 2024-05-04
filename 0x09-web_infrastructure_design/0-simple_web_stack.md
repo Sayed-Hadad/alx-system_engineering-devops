@@ -1,6 +1,6 @@
 # *The Design of LAMP Stack Diagram*
 
-![LAMP Stack](images/0-simple_web_stack.png)
+![LAMP Stack](https://github.com/Sayed-Hadad/alx-system_engineering-devops/tree/master/0x09-web_infrastructure_design/images/0-simple_web_stack.png)
 
 ## Title Explanation:
 

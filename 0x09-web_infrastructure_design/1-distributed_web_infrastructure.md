@@ -1,6 +1,6 @@
 # 1. Distributed Web Infrastructure
 
-![Distributed Web Infrastructure](images\1-distributed_web_infrastructure.png)
+![Distributed Web Infrastructure](https://github.com/Sayed-Hadad/alx-system_engineering-devops/tree/master/0x09-web_infrastructure_design/images/1-distributed_web_infrastructure.png)
 
 ## Title Explanation:
 
