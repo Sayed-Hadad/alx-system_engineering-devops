@@ -1,0 +1,9 @@
+Include /etc/ssh/ssh_config.d/*.conf
+
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+Host 100.25.102.130
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
