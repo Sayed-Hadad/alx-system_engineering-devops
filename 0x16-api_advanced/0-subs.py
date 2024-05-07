@@ -25,8 +25,6 @@ def number_of_subscribers(subreddit):
         subscribers = data["data"]["subscribers"]
         return subscribers
     except requests.RequestException as e:
-        print(f"Error fetching data: {e}")
         return 0
     except KeyError as e:
-        print(f"Error parsing JSON: {e}")
         return 0
