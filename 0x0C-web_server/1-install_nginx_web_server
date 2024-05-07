@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Update package lists and install nginx
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+# Ensure nginx is listening on port 80
+sudo sed -i 's/^\( *listen \)80\([^0-9]\)/\180\2/' /etc/nginx/sites-available/default
+
+# Create a default index.html file with "Hello World!" message
+echo "<!DOCTYPE html>
+<html>
+<head>
+<title>Hello World!</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+</body>
+</html>" | sudo tee /var/www/html/index.html > /dev/null
+
+# Restart nginx
+sudo nginx -s reload
