@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 import requests
 
-"""
-This module provides a function to fetch the number of subscribers from the Reddit API.
-"""
-
 def number_of_subscribers(subreddit):
     """
     Fetches the number of subscribers for a given subreddit from the Reddit API.
@@ -20,15 +16,17 @@ def number_of_subscribers(subreddit):
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {'User-Agent': 'MyAPI/1.0.0'}
-    response = requests.get(url, headers=headers)
 
-    if response.status_code != 200:
-        return 0
-    
     try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
+        
         data = response.json()
         subscribers = data["data"]["subscribers"]
         return subscribers
-        
-    except Exception as e:
+    except requests.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return 0
+    except KeyError as e:
+        print(f"Error parsing JSON: {e}")
         return 0
