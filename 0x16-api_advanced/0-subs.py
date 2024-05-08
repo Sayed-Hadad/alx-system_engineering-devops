@@ -15,10 +15,10 @@ def number_of_subscribers(subreddit):
         None
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {'User-Agent': 'MyAPI/1.0.0'}
+    headers = {'User-Agent': 'ApiTraining'}
 
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers , allow_redirects=False)
         response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
         
         data = response.json()
