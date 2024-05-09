@@ -6,9 +6,6 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """
-    return the nubmer of subscribers
-    """
     endpoint = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {'User-Agent': 'ApiTraining'}
     response = requests.get(endpoint, headers=headers, allow_redirects=False)
