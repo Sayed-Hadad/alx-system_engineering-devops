@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# shows the record type of subdomains, along with the IP address it points to
+
+showSubdomainInfo() {
+    dig +noall +answer "$1" | sed -r "s/$1./$2/g" | \
+    awk '{print "The subdomain " $1 " is a " $4 " record and points to " $5 }'
+}
+argv=("$@")
+if (($# != 2)); then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for sub in "${subdomains[@]}"
+    do
+        showSubdomainInfo "$sub.$1" "$sub"
+    done
+else
+    showSubdomainInfo "$2.$1" "$2"
+fi
